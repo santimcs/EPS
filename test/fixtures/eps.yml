@@ -1,0 +1,27 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  year: 1
+  quarter: 1
+  quarterly_profit: 9.99
+  yoy_quarterly_profit: 9.99
+  accumulated_profit: 9.99
+  yoy_accumulated_profit: 9.99
+  quarterly_eps: 9.99
+  yoy_quarterly_eps: 9.99
+  accumulated_eps: 9.99
+  yoy_accumulated_eps: 9.99
+
+two:
+  name: MyString
+  year: 1
+  quarter: 1
+  quarterly_profit: 9.99
+  yoy_quarterly_profit: 9.99
+  accumulated_profit: 9.99
+  yoy_accumulated_profit: 9.99
+  quarterly_eps: 9.99
+  yoy_quarterly_eps: 9.99
+  accumulated_eps: 9.99
+  yoy_accumulated_eps: 9.99

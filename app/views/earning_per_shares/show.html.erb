@@ -1,0 +1,61 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @earning_per_share.name %>
+</p>
+
+<p>
+  <b>Year:</b>
+  <%= @earning_per_share.year %>
+</p>
+
+<p>
+  <b>Quarter:</b>
+  <%= @earning_per_share.quarter %>
+</p>
+
+<p>
+  <b>Quarterly profit:</b>
+  <%= @earning_per_share.quarterly_profit_in_million %>
+</p>
+
+<p>
+  <b>Yoy quarterly profit:</b>
+  <%= @earning_per_share.yoy_quarterly_profit %>
+</p>
+
+<p>
+  <b>Accumulated profit:</b>
+  <%= @earning_per_share.accumulated_profit %>
+</p>
+
+<p>
+  <b>Yoy accumulated profit:</b>
+  <%= @earning_per_share.yoy_accumulated_profit %>
+</p>
+
+<p>
+  <b>Quarterly eps:</b>
+  <%= @earning_per_share.quarterly_eps %>
+</p>
+
+<p>
+  <b>Yoy quarterly eps:</b>
+  <%= @earning_per_share.yoy_quarterly_eps %>
+</p>
+
+<p>
+  <b>Accumulated eps:</b>
+  <%= @earning_per_share.accumulated_eps %>
+</p>
+
+<p>
+  <b>Yoy accumulated eps:</b>
+  <%= @earning_per_share.yoy_accumulated_eps %>
+</p>
+
+
+<%= link_to 'Edit', edit_earning_per_share_path(@earning_per_share) %> |
+<%= link_to 'Back', earning_per_shares_path %>
+<%= link_to 'New Earning per share', new_earning_per_share_path %>

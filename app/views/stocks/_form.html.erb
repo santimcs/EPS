@@ -1,0 +1,46 @@
+<div class="span-12">
+<fieldset>
+<legend>Editing Stock</legend>
+<%= form_for(@stock) do |f| %>
+  <% if @stock.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@stock.errors.count, "error") %> prohibited this stock from being saved:</h2>
+
+      <ul>
+      <% @stock.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="title">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="title">
+    <%= f.label :in_port %><br />
+    <%= f.check_box :in_port %>
+  </div>
+  <div class="title">
+    <%= f.label :on_watch %><br />
+    <%= f.check_box :on_watch %>
+  </div>
+  <div class="title">
+    <%= f.label :status %><br />
+    <%= f.text_field :status %>
+  </div>
+  <div class="field">
+    <%= f.label :buy_target %><br />
+    <%= f.text_field :buy_target %>
+  </div>
+  <div class="field">
+    <%= f.label :sell_target %><br />
+    <%= f.text_field :sell_target %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+</fieldset>
+</div>

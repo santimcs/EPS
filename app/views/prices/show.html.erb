@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @price.name %>
+</p>
+
+<p>
+  <b>Date:</b>
+  <%= @price.date %>
+</p>
+
+<p>
+  <b>Price:</b>
+  <%= @price.price %>
+</p>
+
+<p>
+  <b>Max price:</b>
+  <%= @price.max_price %>
+</p>
+
+<p>
+  <b>Min price:</b>
+  <%= @price.min_price %>
+</p>
+
+<p>
+  <b>Qty:</b>
+  <%= @price.qty %>
+</p>
+
+<p>
+  <b>Stock:</b>
+  <%= @price.stock_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_price_path(@price) %> |
+<%= link_to 'Back', prices_path %>

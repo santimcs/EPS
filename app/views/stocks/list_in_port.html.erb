@@ -1,0 +1,32 @@
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Price</th>
+    <th>Maximum</th>
+    <th>Minimum</th>
+    <th>Quantity</th>
+    <th>Amount</th>
+    <th>No. of EPS</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @stocks.each do |stock| %>
+  <tr>
+    <td><%= stock.name %></td>
+    <td><%= number_to_currency(stock.prices.first.price) %></td>
+    <td><%= number_to_currency(stock.prices.first.max_price) %></td>
+    <td><%= number_to_currency(stock.prices.first.min_price) %></td>
+    <td><%= stock.prices.first.qty %></td>
+    <td><%= number_to_currency(stock.prices.first.qty * stock.prices.first.price) %></td>
+    <td><%= stock.earning_per_shares.count %></td>
+    <td><%= link_to_icon( 'Show', stock) %></td>
+    <td><%= link_to_icon( 'Edit', edit_stock_path(stock)) %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Stock', new_stock_path %>

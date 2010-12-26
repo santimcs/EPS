@@ -1,0 +1,35 @@
+<h1>Listing prices</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Date</th>
+    <th>Price</th>
+    <th>Max price</th>
+    <th>Min price</th>
+    <th>Qty</th>
+    <th>Stock</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @prices.each do |price| %>
+  <tr>
+    <td><%= price.name %></td>
+    <td><%= price.date %></td>
+    <td><%= price.price %></td>
+    <td><%= price.max_price %></td>
+    <td><%= price.min_price %></td>
+    <td><%= price.qty %></td>
+    <td><%= price.stock_id %></td>
+    <td><%= link_to 'Show', price %></td>
+    <td><%= link_to 'Edit', edit_price_path(price) %></td>
+    <td><%= link_to 'Destroy', price, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Price', new_price_path %>

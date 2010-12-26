@@ -1,0 +1,43 @@
+
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Year</th>
+    <th>Quarter</th>
+    <th>Quarterly profit</th>
+    <th>Yoy quarterly profit</th>
+    <th>Accumulated profit</th>
+    <th>Yoy accumulated profit</th>
+    <th>Quarterly eps</th>
+    <th>Yoy quarterly eps</th>
+    <th>Accumulated eps</th>
+    <th>Yoy accumulated eps</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @earning_per_shares.each do |earning_per_share| %>
+  <tr>
+    <td><%= earning_per_share.name %></td>
+    <td><%= earning_per_share.year %></td>
+    <td><%= earning_per_share.quarter %></td>
+    <td><%= number_to_currency(earning_per_share.quarterly_profit_in_million) %></td>
+    <td><%= number_to_currency(earning_per_share.yoy_quarterly_profit_in_million) %></td>
+    <td><%= number_to_currency(earning_per_share.accumulated_profit_in_million) %></td>
+    <td><%= number_to_currency(earning_per_share.yoy_accumulated_profit_in_million) %></td>
+    <td><%= earning_per_share.quarterly_eps %></td>
+    <td><%= earning_per_share.yoy_quarterly_eps %></td>
+    <td><%= earning_per_share.accumulated_eps %></td>
+    <td><%= earning_per_share.yoy_accumulated_eps %></td>
+    <td><%= link_to 'Show', earning_per_share %></td>
+    <td><%= link_to 'Edit', edit_earning_per_share_path(earning_per_share) %></td>
+    <td><%= link_to 'Destroy', earning_per_share, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Earning per share', new_earning_per_share_path %>

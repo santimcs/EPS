@@ -1,0 +1,68 @@
+<%= form_for(@earning_per_share) do |f| %>
+  <% if @earning_per_share.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@earning_per_share.errors.count, "error") %> prohibited this earning_per_share from being saved:</h2>
+
+      <ul>
+      <% @earning_per_share.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+        <%= f.select :stock_id, Stock.find(:all , :order => "name").collect {|s|
+[(s.name), s.id]} %>
+
+  </div>
+  <div class="field">
+    <%= f.label :year %><br />
+    <% years = { '2010' => '2010', '2009' => '2009', '2011' => '2011' } %>
+    <% list = years %>
+    <%= f.select :year, list %>
+  </div>
+  <div class="field">
+    <%= f.label :quarter %><br />
+    <% quarters = { '4' => '4', '3' => '3', '2' => '2', '1' => '1' } %>
+    <% list = quarters %>
+    <%= f.select :quarter, list %>
+    <!-- <%= f.text_field :quarter %> -->
+  </div>
+  <div class="field">
+    <%= f.label :quarterly_profit %><br />
+    <%= f.text_field :quarterly_profit %>
+  </div>
+  <div class="field">
+    <%= f.label :yoy_quarterly_profit %><br />
+    <%= f.text_field :yoy_quarterly_profit %>
+  </div>
+  <div class="field">
+    <%= f.label :accumulated_profit %><br />
+    <%= f.text_field :accumulated_profit %>
+  </div>
+  <div class="field">
+    <%= f.label :yoy_accumulated_profit %><br />
+    <%= f.text_field :yoy_accumulated_profit %>
+  </div>
+  <div class="field">
+    <%= f.label :quarterly_eps %><br />
+    <%= f.text_field :quarterly_eps %>
+  </div>
+  <div class="field">
+    <%= f.label :yoy_quarterly_eps %><br />
+    <%= f.text_field :yoy_quarterly_eps %>
+  </div>
+  <div class="field">
+    <%= f.label :accumulated_eps %><br />
+    <%= f.text_field :accumulated_eps %>
+  </div>
+  <div class="field">
+    <%= f.label :yoy_accumulated_eps %><br />
+    <%= f.text_field :yoy_accumulated_eps %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

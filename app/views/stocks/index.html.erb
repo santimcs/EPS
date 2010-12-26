@@ -1,0 +1,41 @@
+<% form_tag stocks_path, :method => :get do %>
+	<h3 align="center">Stocks</h3>
+	<p align="center">
+    	<%= text_field_tag :search, params[:search] %>
+		<SELECT NAME="status">
+			<OPTION VALUE="A" SELECTED>All</OPTION>
+			<OPTION VALUE="I" >In Port</OPTION>
+			<OPTION VALUE="O" >On Watch</OPTION>
+			<OPTION VALUE="B" >Buy Alert</OPTION>
+  		</SELECT>
+		<%= submit_tag "Query", :name => nil %>
+	</p>
+<% end %>
+<h4><%= debug params[:status] %></h4>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Price</th>
+    <th>Maximum</th>
+    <th>Minimum</th>
+    <th>Buy Target</th>
+    <th>Quantity</th>
+    <th>Amount</th>
+    <th>No. of EPS</th>
+    <th></th>
+    <th></th>
+    <th>Updated</th>
+    <th>In Port</th>
+    <th>On Watch</th>
+  </tr>
+
+  <%= render :partial => @stocks %>
+
+</table>
+<br />
+<div class="span-12">
+	<%= link_to 'New Stock', new_stock_path %>
+</div>
+<div class="span-12 last">
+	<%= link_to 'Back', stocks_path %>
+</div>

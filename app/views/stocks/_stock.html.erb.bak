@@ -1,0 +1,20 @@
+
+  <tr>
+    <td><%= stock.name %></td>
+    <td><%= number_to_currency(stock.prices.first.price) %></td>
+    <td><%= number_to_currency(stock.prices.first.max_price) %></td>
+    <td><%= number_to_currency(stock.prices.first.min_price) %></td>
+    <td><%= number_to_currency(stock.buy_target) %></td>
+    <td><%= stock.prices.first.qty %></td>
+    <td><%= number_to_currency(stock.prices.first.qty * stock.prices.first.price) %></td>
+    <td><%= stock.earning_per_shares.count %></td>
+    <td><%= link_to 'Show', stock %></td>
+    <td><%= link_to 'Edit', edit_stock_path(stock) %></td>
+
+    <td><%=d stock.in_port %></td>
+    <td><%=d stock.on_watch %></td>
+
+  </tr>
+
+
+
