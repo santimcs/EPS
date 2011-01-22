@@ -11,25 +11,25 @@
 <div class="span-5">
   <b>Close:</b>
   <div class="append-1">
-  <%= number_to_currency(@stock.prices.first.price) %>
+  <%= number_with_precision(@stock.prices.first.price, :precision => 2) %>
   </div>
 </div>
 <div class="span-5">
   <b>Maximum:</b>
   <div class="append-1">
-  <%= number_to_currency(@stock.prices.first.max_price) %>
+  <%= number_with_precision(@stock.prices.first.max_price, :precision => 2) %>
   </div>
 </div>
 <div class="span-5">
   <b>Minimum:</b>
   <div class="append-1">
-  <%= number_to_currency(@stock.prices.first.min_price) %>
+  <%= number_with_precision(@stock.prices.first.min_price, :precision => 2) %>
   </div>
 </div>
 <div class="span-5">
   <b>Qty:</b>
   <div class="append-1">
-  <%= @stock.prices.first.qty %>
+  <%= number_with_delimiter(@stock.prices.first.qty) %>
   </div>
 </div>
 
@@ -42,20 +42,20 @@
 <div class="span-5">
   <b>Average EPS = </b>
   <% avg_eps = ((@stock.earning_per_shares.sum(:quarterly_eps, :conditions => ["year = ? or (year < ? and quarter > ?)",@stock.earning_per_shares.first.year,@stock.earning_per_shares.first.year,@stock.earning_per_shares.first.quarter]))/(@stock.earning_per_shares.count(:conditions => ["year = ? or (year < ? and quarter > ?)",@stock.earning_per_shares.first.year,@stock.earning_per_shares.first.year,@stock.earning_per_shares.first.quarter]))*4).round(2)%>
-  <%= number_to_currency(avg_eps) %>
+  <%= number_with_precision(avg_eps, :precision => 2) %>
 </div>
 
 <div class="span-5">
   <b>P/E * 10 = </b>
-  <%= number_to_currency(avg_eps*10) %>
+  <%= number_with_precision(avg_eps*10, :precision => 2, :delimiter => ',') %>
 </div>
 <div class="span-5">
   <b>P/E * 15 = </b>
-  <%= number_to_currency(avg_eps*15) %>
+  <%= number_with_precision(avg_eps*15, :precision => 2, :delimiter => ',') %>
 </div>
 <div class="span-5 last">
   <b>P/E * 20 = </b>
-  <%= number_to_currency(avg_eps*20) %>
+  <%= number_with_precision(avg_eps*20, :precision => 2, :delimiter => ',') %>
 </div>
 
 </fieldset>
@@ -63,7 +63,7 @@
 
 <div class="span-24 prepend-10">
   <b>Average P/E = </b>
- <%= @stock.prices.first.price.div(avg_eps) %>
+ <%= number_with_precision(@stock.prices.first.price.div(avg_eps), :precision => 2) %>
 </div>
 <div class="span-24">
 <fieldset>
@@ -100,10 +100,10 @@
 		<td><%=h earning_per_share.accumulated_eps %></td>
 		<td><%=h earning_per_share.yoy_accumulated_eps %></td>
 
-		<td><%=h number_to_currency(earning_per_share.quarterly_profit_in_million) %></td>
-		<td><%=h number_to_currency(earning_per_share.yoy_quarterly_profit_in_million) %></td>
-		<td><%=h number_to_currency(earning_per_share.accumulated_profit_in_million) %></td>
-		<td><%=h number_to_currency(earning_per_share.yoy_accumulated_profit_in_million) %></td>
+		<td><%=h number_with_precision(earning_per_share.quarterly_profit_in_million, :precision => 2, :delimiter => ',') %></td>
+		<td><%=h number_with_precision(earning_per_share.yoy_quarterly_profit_in_million, :precision => 2, :delimiter => ',') %></td>
+		<td><%=h number_with_precision(earning_per_share.accumulated_profit_in_million, :precision => 2, :delimiter => ',') %></td>
+		<td><%=h number_with_precision(earning_per_share.yoy_accumulated_profit_in_million, :precision => 2, :delimiter => ',') %></td>
 
 	</tr>
 <% end %>

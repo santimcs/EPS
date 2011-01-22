@@ -1,12 +1,12 @@
 
   <tr>
     <td><%= stock.name %></td>
-    <td><%= number_to_currency(stock.prices.first.price) %></td>
-    <td><%= number_to_currency(stock.prices.first.max_price) %></td>
-    <td><%= number_to_currency(stock.prices.first.min_price) %></td>
-    <td><%= number_to_currency(stock.buy_target) %></td>
-    <td><%= stock.prices.first.qty %></td>
-    <td><%= number_to_currency(stock.prices.first.qty * stock.prices.first.price) %></td>
+    <td><%= number_with_precision(stock.prices.first.price, :precision => 2) %></td>
+    <td><%= number_with_precision(stock.prices.first.max_price, :precision => 2) %></td>
+    <td><%= number_with_precision(stock.prices.first.min_price, :precision => 2) %></td>
+    <td><%= number_with_precision(stock.buy_target, :precision => 2) %></td>
+    <td><%= number_with_delimiter(stock.prices.first.qty) %></td>
+    <td><%= number_with_precision(stock.prices.first.qty * stock.prices.first.price, :precision => 2, :delimiter => ',') %></td>
     <td><%= stock.earning_per_shares.count %></td>
     <td><%= link_to_icon('Show', stock) %></td>
     <td><%= link_to_icon('Edit', edit_stock_path(stock)) %></td>
