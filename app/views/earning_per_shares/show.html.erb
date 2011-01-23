@@ -1,10 +1,12 @@
 <p id="notice"><%= notice %></p>
-
-<p>
-  <b>Name:</b>
-  <%= @earning_per_share.name %>
-</p>
-
+<div class="span-24">
+  <h3 align="center" class="quiet">
+  <%= @earning_per_share.stock.name %>
+  </h1>
+</div>
+<div class="span-24">
+<fieldset>
+<p></p>
 <p>
   <b>Year:</b>
   <%= @earning_per_share.year %>
@@ -17,22 +19,22 @@
 
 <p>
   <b>Quarterly profit:</b>
-  <%= @earning_per_share.quarterly_profit_in_million %>
+  <%=h number_with_precision(@earning_per_share.quarterly_profit_in_million, :precision => 2, :delimiter => ',') %>
 </p>
 
 <p>
   <b>Yoy quarterly profit:</b>
-  <%= @earning_per_share.yoy_quarterly_profit %>
+  <%=h number_with_precision( @earning_per_share.yoy_quarterly_profit_in_million, :precision => 2, :delimiter => ',') %>
 </p>
 
 <p>
   <b>Accumulated profit:</b>
-  <%= @earning_per_share.accumulated_profit %>
+  <%=h number_with_precision( @earning_per_share.accumulated_profit_in_million, :precision => 2, :delimiter => ',') %>
 </p>
 
 <p>
   <b>Yoy accumulated profit:</b>
-  <%= @earning_per_share.yoy_accumulated_profit %>
+  <%=h number_with_precision( @earning_per_share.yoy_accumulated_profit_in_million, :precision => 2, :delimiter => ',') %>
 </p>
 
 <p>
@@ -57,5 +59,8 @@
 
 
 <%= link_to 'Edit', edit_earning_per_share_path(@earning_per_share) %> |
-<%= link_to 'Back', earning_per_shares_path %>
+<%= link_to 'Back', stocks_path %>
 <%= link_to 'New Earning per share', new_earning_per_share_path %>
+
+  </fieldset>
+</div>

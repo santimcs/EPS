@@ -1,15 +1,18 @@
 EPS::Application.routes.draw do
   resources :sectors
 
-  resources :earning_per_shares
-
   resources :eps
 
   resources :quarters
 
   resources :years
 
-  resources :stocks
+  resources :stocks 
+  	
+  	resources :earning_per_shares  	
+  	
+
+  	
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

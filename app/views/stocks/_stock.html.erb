@@ -5,6 +5,8 @@
     <td><%= number_with_precision(stock.prices.first.max_price, :precision => 2) %></td>
     <td><%= number_with_precision(stock.prices.first.min_price, :precision => 2) %></td>
     <td><%= number_with_precision(stock.buy_target, :precision => 2) %></td>
+    <td><%= number_with_precision(stock.sell_target, :precision => 2) %></td>
+    
     <td><%= number_with_delimiter(stock.prices.first.qty) %></td>
     <td><%= number_with_precision(stock.prices.first.qty * stock.prices.first.price, :precision => 2, :delimiter => ',') %></td>
     <td><%= stock.earning_per_shares.count %></td>

@@ -9,6 +9,10 @@ class Stock < ActiveRecord::Base
     joins(:prices).
     where('"prices"."min_price" <= "stocks"."buy_target"')
     }
+  scope :sell_alert, lambda {
+    joins(:prices).
+    where('"stocks"."in_port" = "t" AND "prices"."max_price" >= "stocks"."sell_target"')
+    }    
   default_scope :order => 'name ASC'
 
   def yearly_eps
@@ -26,6 +30,8 @@ class Stock < ActiveRecord::Base
 		  self.contain_char(search).is_in_port
     elsif "#{status}" == 'O'
       self.contain_char(search).is_on_watch
+    elsif "#{status}" == 'S'
+      self.contain_char(search).sell_alert      
     else
       self.contain_char(search).buy_alert
     end
