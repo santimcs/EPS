@@ -1,0 +1,57 @@
+<%= form_for(@ratio) do |f| %>
+  <% if @ratio.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@ratio.errors.count, "error") %> prohibited this ratio from being saved:</h2>
+
+      <ul>
+      <% @ratio.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :stock_id %><br />
+    <%= f.number_field :stock_id %>
+  </div>
+  <div class="field">
+    <%= f.label :stock_name %><br />
+    <%= f.text_field :stock_name %>
+  </div>
+  <div class="field">
+    <%= f.label :price %><br />
+    <%= f.text_field :price %>
+  </div>
+  <div class="field">
+    <%= f.label :earning_per_share %><br />
+    <%= f.text_field :earning_per_share %>
+  </div>
+  <div class="field">
+    <%= f.label :ratio %><br />
+    <%= f.text_field :ratio %>
+  </div>
+  <div class="field">
+    <%= f.label :price_book_value %><br />
+    <%= f.text_field :price_book_value %>
+  </div>
+  <div class="field">
+    <%= f.label :yield %><br />
+    <%= f.text_field :yield %>
+  </div>
+  <div class="field">
+    <%= f.label :dividend %><br />
+    <%= f.text_field :dividend %>
+  </div>
+  <div class="field">
+    <%= f.label :par_value %><br />
+    <%= f.text_field :par_value %>
+  </div>
+  <div class="field">
+    <%= f.label :shares %><br />
+    <%= f.number_field :shares %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,298 @@
+<?xml version="1.0"?>
+<?mso-application progid="Excel.Sheet"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:o="urn:schemas-microsoft-com:office:office"
+ xmlns:x="urn:schemas-microsoft-com:office:excel"
+ xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:html="http://www.w3.org/TR/REC-html40">
+ <DocumentProperties xmlns="urn:schemas-microsoft-com:office:office">
+  <LastAuthor>Home Used</LastAuthor>
+  <LastSaved>2012-10-04T20:21:33Z</LastSaved>
+  <Version>11.9999</Version>
+ </DocumentProperties>
+ <ExcelWorkbook xmlns="urn:schemas-microsoft-com:office:excel">
+  <WindowHeight>9975</WindowHeight>
+  <WindowWidth>6705</WindowWidth>
+  <WindowTopX>-15</WindowTopX>
+  <WindowTopY>-15</WindowTopY>
+  <ProtectStructure>False</ProtectStructure>
+  <ProtectWindows>False</ProtectWindows>
+ </ExcelWorkbook>
+ <Styles>
+  <Style ss:ID="Default" ss:Name="Normal">
+   <Alignment ss:Vertical="Bottom"/>
+   <Borders/>
+   <Font x:CharSet="222"/>
+   <Interior/>
+   <NumberFormat/>
+   <Protection/>
+  </Style>
+ </Styles>
+ <Worksheet ss:Name="Table1">
+  <Table ss:ExpandedColumnCount="7" ss:ExpandedRowCount="26" x:FullColumns="1"
+   x:FullRows="1">
+   <Column ss:Width="45.75"/>
+   <Column ss:Width="34.5"/>
+   <Column ss:Width="25.5"/>
+   <Column ss:Width="36"/>
+   <Column ss:Width="18.75"/>
+   <Column ss:Width="58.5"/>
+   <Column ss:AutoFitWidth="0" ss:Width="110.25"/>
+   <Row>
+    <Cell><Data ss:Type="String">NAME</Data></Cell>
+    <Cell><Data ss:Type="String">PRICE</Data></Cell>
+    <Cell><Data ss:Type="String">SPD</Data></Cell>
+    <Cell><Data ss:Type="String">DOWN</Data></Cell>
+    <Cell><Data ss:Type="String">UP</Data></Cell>
+    <Cell><Data ss:Type="String">QTY</Data></Cell>
+    <Cell><Data ss:Type="String">AMT</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">AH</Data></Cell>
+    <Cell><Data ss:Type="String">22.68</Data></Cell>
+    <Cell><Data ss:Type="String">6</Data></Cell>
+    <Cell><Data ss:Type="String">3</Data></Cell>
+    <Cell><Data ss:Type="String">3</Data></Cell>
+    <Cell><Data ss:Type="String">1,960,940</Data></Cell>
+    <Cell><Data ss:Type="String">44,663,130.00</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">CCP</Data></Cell>
+    <Cell><Data ss:Type="String">5.49</Data></Cell>
+    <Cell><Data ss:Type="String">6</Data></Cell>
+    <Cell><Data ss:Type="String">4</Data></Cell>
+    <Cell><Data ss:Type="String">2</Data></Cell>
+    <Cell><Data ss:Type="String">10,586,902</Data></Cell>
+    <Cell><Data ss:Type="String">57,929,801.00</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">CNT</Data></Cell>
+    <Cell><Data ss:Type="String">6.66</Data></Cell>
+    <Cell><Data ss:Type="String">6</Data></Cell>
+    <Cell><Data ss:Type="String">4</Data></Cell>
+    <Cell><Data ss:Type="String">2</Data></Cell>
+    <Cell><Data ss:Type="String">7,860,993</Data></Cell>
+    <Cell><Data ss:Type="String">53,511,341.27</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">CTW</Data></Cell>
+    <Cell><Data ss:Type="String">9.25</Data></Cell>
+    <Cell><Data ss:Type="String">9</Data></Cell>
+    <Cell><Data ss:Type="String">5</Data></Cell>
+    <Cell><Data ss:Type="String">4</Data></Cell>
+    <Cell><Data ss:Type="String">3,360,980</Data></Cell>
+    <Cell><Data ss:Type="String">31,189,275.00</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">EARTH</Data></Cell>
+    <Cell><Data ss:Type="String">5.61</Data></Cell>
+    <Cell><Data ss:Type="String">10</Data></Cell>
+    <Cell><Data ss:Type="String">8</Data></Cell>
+    <Cell><Data ss:Type="String">3</Data></Cell>
+    <Cell><Data ss:Type="String">116,547,572</Data></Cell>
+    <Cell><Data ss:Type="String">742,117,749.74</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">LOXLEY</Data></Cell>
+    <Cell><Data ss:Type="String">4.88</Data></Cell>
+    <Cell><Data ss:Type="String">12</Data></Cell>
+    <Cell><Data ss:Type="String">8</Data></Cell>
+    <Cell><Data ss:Type="String">4</Data></Cell>
+    <Cell><Data ss:Type="String">163,587,828</Data></Cell>
+    <Cell><Data ss:Type="String">807,764,056.22</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">LPN</Data></Cell>
+    <Cell><Data ss:Type="String">19.22</Data></Cell>
+    <Cell><Data ss:Type="String">6</Data></Cell>
+    <Cell><Data ss:Type="String">4</Data></Cell>
+    <Cell><Data ss:Type="String">2</Data></Cell>
+    <Cell><Data ss:Type="String">4,954,341</Data></Cell>
+    <Cell><Data ss:Type="String">95,325,191.36</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">MDX</Data></Cell>
+    <Cell><Data ss:Type="String">7.08</Data></Cell>
+    <Cell><Data ss:Type="String">9</Data></Cell>
+    <Cell><Data ss:Type="String">5</Data></Cell>
+    <Cell><Data ss:Type="String">4</Data></Cell>
+    <Cell><Data ss:Type="String">58,601,358</Data></Cell>
+    <Cell><Data ss:Type="String">420,424,171.20</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">PLE</Data></Cell>
+    <Cell><Data ss:Type="String">1.42</Data></Cell>
+    <Cell><Data ss:Type="String">7</Data></Cell>
+    <Cell><Data ss:Type="String">5</Data></Cell>
+    <Cell><Data ss:Type="String">2</Data></Cell>
+    <Cell><Data ss:Type="String">19,168,020</Data></Cell>
+    <Cell><Data ss:Type="String">27,731,510.40</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">RML</Data></Cell>
+    <Cell><Data ss:Type="String">1.81</Data></Cell>
+    <Cell><Data ss:Type="String">5</Data></Cell>
+    <Cell><Data ss:Type="String">4</Data></Cell>
+    <Cell><Data ss:Type="String">1</Data></Cell>
+    <Cell><Data ss:Type="String">61,303,866</Data></Cell>
+    <Cell><Data ss:Type="String">111,007,218.06</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">SAMART</Data></Cell>
+    <Cell><Data ss:Type="String">11.14</Data></Cell>
+    <Cell><Data ss:Type="String">6</Data></Cell>
+    <Cell><Data ss:Type="String">4</Data></Cell>
+    <Cell><Data ss:Type="String">3</Data></Cell>
+    <Cell><Data ss:Type="String">23,549,791</Data></Cell>
+    <Cell><Data ss:Type="String">262,881,797.38</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">SAMTEL</Data></Cell>
+    <Cell><Data ss:Type="String">17.66</Data></Cell>
+    <Cell><Data ss:Type="String">7</Data></Cell>
+    <Cell><Data ss:Type="String">4</Data></Cell>
+    <Cell><Data ss:Type="String">3</Data></Cell>
+    <Cell><Data ss:Type="String">8,575,258</Data></Cell>
+    <Cell><Data ss:Type="String">150,692,033.38</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">SITHAI</Data></Cell>
+    <Cell><Data ss:Type="String">26.05</Data></Cell>
+    <Cell><Data ss:Type="String">7</Data></Cell>
+    <Cell><Data ss:Type="String">4</Data></Cell>
+    <Cell><Data ss:Type="String">2</Data></Cell>
+    <Cell><Data ss:Type="String">6,190,627</Data></Cell>
+    <Cell><Data ss:Type="String">164,492,378.45</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">STEC</Data></Cell>
+    <Cell><Data ss:Type="String">19.90</Data></Cell>
+    <Cell><Data ss:Type="String">6</Data></Cell>
+    <Cell><Data ss:Type="String">4</Data></Cell>
+    <Cell><Data ss:Type="String">2</Data></Cell>
+    <Cell><Data ss:Type="String">5,947,374</Data></Cell>
+    <Cell><Data ss:Type="String">119,125,081.20</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">SUSCO</Data></Cell>
+    <Cell><Data ss:Type="String">2.65</Data></Cell>
+    <Cell><Data ss:Type="String">8</Data></Cell>
+    <Cell><Data ss:Type="String">5</Data></Cell>
+    <Cell><Data ss:Type="String">3</Data></Cell>
+    <Cell><Data ss:Type="String">154,102,056</Data></Cell>
+    <Cell><Data ss:Type="String">427,616,626.24</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">THANI</Data></Cell>
+    <Cell><Data ss:Type="String">3.10</Data></Cell>
+    <Cell><Data ss:Type="String">5</Data></Cell>
+    <Cell><Data ss:Type="String">3</Data></Cell>
+    <Cell><Data ss:Type="String">2</Data></Cell>
+    <Cell><Data ss:Type="String">19,514,563</Data></Cell>
+    <Cell><Data ss:Type="String">60,307,333.65</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">THCOM</Data></Cell>
+    <Cell><Data ss:Type="String">19.72</Data></Cell>
+    <Cell><Data ss:Type="String">6</Data></Cell>
+    <Cell><Data ss:Type="String">3</Data></Cell>
+    <Cell><Data ss:Type="String">3</Data></Cell>
+    <Cell><Data ss:Type="String">18,591,963</Data></Cell>
+    <Cell><Data ss:Type="String">369,639,795.78</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">TTCL</Data></Cell>
+    <Cell><Data ss:Type="String">23.12</Data></Cell>
+    <Cell><Data ss:Type="String">9</Data></Cell>
+    <Cell><Data ss:Type="String">6</Data></Cell>
+    <Cell><Data ss:Type="String">3</Data></Cell>
+    <Cell><Data ss:Type="String">2,848,664</Data></Cell>
+    <Cell><Data ss:Type="String">66,560,194.26</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">UAC</Data></Cell>
+    <Cell><Data ss:Type="String">12.20</Data></Cell>
+    <Cell><Data ss:Type="String">7</Data></Cell>
+    <Cell><Data ss:Type="String">5</Data></Cell>
+    <Cell><Data ss:Type="String">2</Data></Cell>
+    <Cell><Data ss:Type="String">5,707,367</Data></Cell>
+    <Cell><Data ss:Type="String">70,584,786.62</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">UEC</Data></Cell>
+    <Cell><Data ss:Type="String">4.08</Data></Cell>
+    <Cell><Data ss:Type="String">9</Data></Cell>
+    <Cell><Data ss:Type="String">5</Data></Cell>
+    <Cell><Data ss:Type="String">4</Data></Cell>
+    <Cell><Data ss:Type="String">14,536,661</Data></Cell>
+    <Cell><Data ss:Type="String">61,172,234.18</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">UMI</Data></Cell>
+    <Cell><Data ss:Type="String">6.29</Data></Cell>
+    <Cell><Data ss:Type="String">6</Data></Cell>
+    <Cell><Data ss:Type="String">4</Data></Cell>
+    <Cell><Data ss:Type="String">2</Data></Cell>
+    <Cell><Data ss:Type="String">29,689,945</Data></Cell>
+    <Cell><Data ss:Type="String">184,556,499.52</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">UV</Data></Cell>
+    <Cell><Data ss:Type="String">9.43</Data></Cell>
+    <Cell><Data ss:Type="String">16</Data></Cell>
+    <Cell><Data ss:Type="String">11</Data></Cell>
+    <Cell><Data ss:Type="String">6</Data></Cell>
+    <Cell><Data ss:Type="String">84,546,261</Data></Cell>
+    <Cell><Data ss:Type="String">814,622,145.82</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">VNG</Data></Cell>
+    <Cell><Data ss:Type="String">4.95</Data></Cell>
+    <Cell><Data ss:Type="String">8</Data></Cell>
+    <Cell><Data ss:Type="String">5</Data></Cell>
+    <Cell><Data ss:Type="String">3</Data></Cell>
+    <Cell><Data ss:Type="String">14,621,480</Data></Cell>
+    <Cell><Data ss:Type="String">73,813,318.00</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">VTE</Data></Cell>
+    <Cell><Data ss:Type="String">3.67</Data></Cell>
+    <Cell><Data ss:Type="String">20</Data></Cell>
+    <Cell><Data ss:Type="String">12</Data></Cell>
+    <Cell><Data ss:Type="String">8</Data></Cell>
+    <Cell><Data ss:Type="String">30,587,650</Data></Cell>
+    <Cell><Data ss:Type="String">129,894,629.40</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">YUASA</Data></Cell>
+    <Cell><Data ss:Type="String">11.82</Data></Cell>
+    <Cell><Data ss:Type="String">6</Data></Cell>
+    <Cell><Data ss:Type="String">3</Data></Cell>
+    <Cell><Data ss:Type="String">3</Data></Cell>
+    <Cell><Data ss:Type="String">5,115,756</Data></Cell>
+    <Cell><Data ss:Type="String">63,536,262.80</Data></Cell>
+   </Row>
+  </Table>
+  <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
+   <Print>
+    <ValidPrinterInfo/>
+    <PaperSizeIndex>9</PaperSizeIndex>
+    <HorizontalResolution>200</HorizontalResolution>
+    <VerticalResolution>200</VerticalResolution>
+   </Print>
+   <Selected/>
+   <Panes>
+    <Pane>
+     <Number>3</Number>
+     <ActiveRow>10</ActiveRow>
+     <RangeSelection>R11</RangeSelection>
+    </Pane>
+   </Panes>
+   <ProtectObjects>False</ProtectObjects>
+   <ProtectScenarios>False</ProtectScenarios>
+  </WorksheetOptions>
+  <Sorting xmlns="urn:schemas-microsoft-com:office:excel">
+   <Sort>NAME</Sort>
+  </Sorting>
+ </Worksheet>
+</Workbook>

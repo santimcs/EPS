@@ -1,0 +1,217 @@
+<?xml version="1.0"?>
+<?mso-application progid="Excel.Sheet"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:o="urn:schemas-microsoft-com:office:office"
+ xmlns:x="urn:schemas-microsoft-com:office:excel"
+ xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:html="http://www.w3.org/TR/REC-html40">
+ <DocumentProperties xmlns="urn:schemas-microsoft-com:office:office">
+  <LastAuthor>Home Used</LastAuthor>
+  <LastSaved>2014-06-30T08:10:15Z</LastSaved>
+  <Version>11.9999</Version>
+ </DocumentProperties>
+ <ExcelWorkbook xmlns="urn:schemas-microsoft-com:office:excel">
+  <WindowHeight>10005</WindowHeight>
+  <WindowWidth>10005</WindowWidth>
+  <WindowTopX>120</WindowTopX>
+  <WindowTopY>135</WindowTopY>
+  <ProtectStructure>False</ProtectStructure>
+  <ProtectWindows>False</ProtectWindows>
+ </ExcelWorkbook>
+ <Styles>
+  <Style ss:ID="Default" ss:Name="Normal">
+   <Alignment ss:Vertical="Bottom"/>
+   <Borders/>
+   <Font x:CharSet="222"/>
+   <Interior/>
+   <NumberFormat/>
+   <Protection/>
+  </Style>
+  <Style ss:ID="s21">
+   <NumberFormat ss:Format="&quot;฿&quot;#,##0.00"/>
+  </Style>
+  <Style ss:ID="s22">
+   <Font x:Family="Swiss" ss:Bold="1"/>
+  </Style>
+  <Style ss:ID="s23">
+   <Font x:Family="Swiss" ss:Bold="1"/>
+   <NumberFormat ss:Format="&quot;฿&quot;#,##0.00"/>
+  </Style>
+ </Styles>
+ <Worksheet ss:Name="Table1">
+  <Table ss:ExpandedColumnCount="5" ss:ExpandedRowCount="22" x:FullColumns="1"
+   x:FullRows="1">
+   <Column ss:AutoFitWidth="0" ss:Width="110.25" ss:Span="1"/>
+   <Column ss:Index="3" ss:StyleID="s21" ss:Width="58.5"/>
+   <Column ss:StyleID="s21" ss:AutoFitWidth="0"/>
+   <Column ss:StyleID="s21" ss:Width="58.5"/>
+   <Row ss:StyleID="s22">
+    <Cell><Data ss:Type="String">account_number</Data></Cell>
+    <Cell><Data ss:Type="String">due_date</Data></Cell>
+    <Cell ss:StyleID="s23"><Data ss:Type="String">amount</Data></Cell>
+    <Cell ss:StyleID="s23"><Data ss:Type="String">tax</Data></Cell>
+    <Cell ss:StyleID="s23"><Data ss:Type="String">net</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">TKK 2552 6 years</Data></Cell>
+    <Cell><Data ss:Type="String">2014-01-13</Data></Cell>
+    <Cell><Data ss:Type="Number">7500</Data></Cell>
+    <Cell><Data ss:Type="Number">1125</Data></Cell>
+    <Cell><Data ss:Type="Number">6375</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">CPNRF</Data></Cell>
+    <Cell><Data ss:Type="String">2014-01-15</Data></Cell>
+    <Cell><Data ss:Type="Number">7200</Data></Cell>
+    <Cell><Data ss:Type="Number">720</Data></Cell>
+    <Cell><Data ss:Type="Number">6480</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">BOT 2552 3 &amp; 9</Data></Cell>
+    <Cell><Data ss:Type="String">2014-03-03</Data></Cell>
+    <Cell><Data ss:Type="Number">7500</Data></Cell>
+    <Cell><Data ss:Type="Number">1125</Data></Cell>
+    <Cell><Data ss:Type="Number">6375</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">CPNRF</Data></Cell>
+    <Cell><Data ss:Type="String">2014-05-07</Data></Cell>
+    <Cell><Data ss:Type="Number">8640</Data></Cell>
+    <Cell><Data ss:Type="Number">864</Data></Cell>
+    <Cell><Data ss:Type="Number">7776</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">424-1-32190-9</Data></Cell>
+    <Cell><Data ss:Type="String">2014-05-07</Data></Cell>
+    <Cell><Data ss:Type="Number">2922</Data></Cell>
+    <Cell><Data ss:Type="Number">0</Data></Cell>
+    <Cell><Data ss:Type="Number">2922</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">CPNRF</Data></Cell>
+    <Cell><Data ss:Type="String">2014-06-10</Data></Cell>
+    <Cell><Data ss:Type="Number">1200</Data></Cell>
+    <Cell><Data ss:Type="Number">120</Data></Cell>
+    <Cell><Data ss:Type="Number">1080</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">BOT 2552 7 years</Data></Cell>
+    <Cell><Data ss:Type="String">2014-06-11</Data></Cell>
+    <Cell><Data ss:Type="Number">6000</Data></Cell>
+    <Cell><Data ss:Type="Number">900</Data></Cell>
+    <Cell><Data ss:Type="Number">5100</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">204-71-000144-3</Data></Cell>
+    <Cell><Data ss:Type="String">2014-06-30</Data></Cell>
+    <Cell><Data ss:Type="Number">6700</Data></Cell>
+    <Cell><Data ss:Type="Number">0</Data></Cell>
+    <Cell><Data ss:Type="Number">6700</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">204-71-000143-5</Data></Cell>
+    <Cell><Data ss:Type="String">2014-06-30</Data></Cell>
+    <Cell><Data ss:Type="Number">5900</Data></Cell>
+    <Cell><Data ss:Type="Number">0</Data></Cell>
+    <Cell><Data ss:Type="Number">5900</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">005-71-000014-3</Data></Cell>
+    <Cell><Data ss:Type="String">2014-06-30</Data></Cell>
+    <Cell><Data ss:Type="Number">5800</Data></Cell>
+    <Cell><Data ss:Type="Number">0</Data></Cell>
+    <Cell><Data ss:Type="Number">5800</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Index="3" ss:StyleID="s23" ss:Formula="=SUM(R[-10]C:R[-1]C)"><Data
+      ss:Type="Number">59362</Data></Cell>
+    <Cell ss:StyleID="s23"/>
+    <Cell ss:StyleID="s23" ss:Formula="=SUM(R[-10]C:R[-1]C)"><Data ss:Type="Number">54508</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">TKK 2552 6 years</Data></Cell>
+    <Cell><Data ss:Type="String">2014-07-13</Data></Cell>
+    <Cell><Data ss:Type="Number">7500</Data></Cell>
+    <Cell><Data ss:Type="Number">1125</Data></Cell>
+    <Cell><Data ss:Type="Number">6375</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">424-1-32190-9</Data></Cell>
+    <Cell><Data ss:Type="String">2014-08-07</Data></Cell>
+    <Cell><Data ss:Type="Number">3020</Data></Cell>
+    <Cell><Data ss:Type="Number">0</Data></Cell>
+    <Cell><Data ss:Type="Number">3020</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">BOT 2552 3 &amp; 9</Data></Cell>
+    <Cell><Data ss:Type="String">2014-09-03</Data></Cell>
+    <Cell><Data ss:Type="Number">7500</Data></Cell>
+    <Cell><Data ss:Type="Number">1125</Data></Cell>
+    <Cell><Data ss:Type="Number">6375</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">424-1-32190-9</Data></Cell>
+    <Cell><Data ss:Type="String">2014-11-07</Data></Cell>
+    <Cell><Data ss:Type="Number">3020</Data></Cell>
+    <Cell><Data ss:Type="Number">0</Data></Cell>
+    <Cell><Data ss:Type="Number">3020</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">BOT 2552 7 years</Data></Cell>
+    <Cell><Data ss:Type="String">2014-12-11</Data></Cell>
+    <Cell><Data ss:Type="Number">7500</Data></Cell>
+    <Cell><Data ss:Type="Number">1125</Data></Cell>
+    <Cell><Data ss:Type="Number">6375</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">204-71-000143-5</Data></Cell>
+    <Cell><Data ss:Type="String">2014-12-31</Data></Cell>
+    <Cell><Data ss:Type="Number">8380</Data></Cell>
+    <Cell><Data ss:Type="Number">0</Data></Cell>
+    <Cell><Data ss:Type="Number">8380</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">204-71-000144-3</Data></Cell>
+    <Cell><Data ss:Type="String">2014-12-31</Data></Cell>
+    <Cell><Data ss:Type="Number">9080</Data></Cell>
+    <Cell><Data ss:Type="Number">0</Data></Cell>
+    <Cell><Data ss:Type="Number">9080</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">005-71-000014-3</Data></Cell>
+    <Cell><Data ss:Type="String">2014-12-31</Data></Cell>
+    <Cell><Data ss:Type="Number">6880</Data></Cell>
+    <Cell><Data ss:Type="Number">0</Data></Cell>
+    <Cell><Data ss:Type="Number">6880</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Index="3" ss:StyleID="s23" ss:Formula="=SUM(R[-8]C:R[-1]C)"><Data
+      ss:Type="Number">52880</Data></Cell>
+    <Cell ss:StyleID="s23"/>
+    <Cell ss:StyleID="s23" ss:Formula="=SUM(R[-8]C:R[-1]C)"><Data ss:Type="Number">49505</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Index="3" ss:StyleID="s23" ss:Formula="=R[-10]C+R[-1]C"><Data
+      ss:Type="Number">112242</Data></Cell>
+    <Cell ss:StyleID="s23"/>
+    <Cell ss:StyleID="s23" ss:Formula="=R[-10]C+R[-1]C"><Data ss:Type="Number">104013</Data></Cell>
+   </Row>
+  </Table>
+  <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
+   <Selected/>
+   <Panes>
+    <Pane>
+     <Number>3</Number>
+     <ActiveRow>20</ActiveRow>
+     <ActiveCol>2</ActiveCol>
+     <RangeSelection>R21C3:R22C5</RangeSelection>
+    </Pane>
+   </Panes>
+   <ProtectObjects>False</ProtectObjects>
+   <ProtectScenarios>False</ProtectScenarios>
+  </WorksheetOptions>
+  <Sorting xmlns="urn:schemas-microsoft-com:office:excel">
+   <Sort>due_date</Sort>
+  </Sorting>
+ </Worksheet>
+</Workbook>

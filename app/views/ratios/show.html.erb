@@ -1,0 +1,55 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Stock:</b>
+  <%= @ratio.stock_id %>
+</p>
+
+<p>
+  <b>Stock name:</b>
+  <%= @ratio.stock_name %>
+</p>
+
+<p>
+  <b>Price:</b>
+  <%= @ratio.price %>
+</p>
+
+<p>
+  <b>Earning per share:</b>
+  <%= @ratio.earning_per_share %>
+</p>
+
+<p>
+  <b>Ratio:</b>
+  <%= @ratio.ratio %>
+</p>
+
+<p>
+  <b>Price book value:</b>
+  <%= @ratio.price_book_value %>
+</p>
+
+<p>
+  <b>Yield:</b>
+  <%= @ratio.yield %>
+</p>
+
+<p>
+  <b>Dividend:</b>
+  <%= @ratio.dividend %>
+</p>
+
+<p>
+  <b>Par value:</b>
+  <%= @ratio.par_value %>
+</p>
+
+<p>
+  <b>Shares:</b>
+  <%= @ratio.shares %>
+</p>
+
+
+<%= link_to 'Edit', edit_ratio_path(@ratio) %> |
+<%= link_to 'Back', ratios_path %>

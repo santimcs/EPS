@@ -1,4 +1,16 @@
 EPS::Application.routes.draw do
+  resources :opinions
+
+
+  resources :ratios
+
+
+  resources :consensus
+
+
+  resources :brokers
+
+
   resources :sectors
 
   resources :eps
@@ -10,9 +22,9 @@ EPS::Application.routes.draw do
   resources :stocks 
   	
   	resources :earning_per_shares  	
-  	
+    resources :prices	
 
-  	
+    root :to => "stocks#index" 	
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

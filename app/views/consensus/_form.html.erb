@@ -1,0 +1,71 @@
+<%= form_for(@consensu) do |f| %>
+  <% if @consensu.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@consensu.errors.count, "error") %> prohibited this consensu from being saved:</h2>
+
+      <ul>
+      <% @consensu.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :broker_id %><br />
+    <%= f.collection_select :broker_id, Broker.all, :id, :name %>
+  </div>
+  <div class="field">
+    <%= f.label :stock_id %><br />
+    <%= f.collection_select :stock_id, Stock.all, :id, :name %>
+  </div>
+
+
+  <div class="field">
+    <%= f.label :this_year_EPS %><br />
+    <%= f.text_field :this_year_EPS %>
+  </div>
+  <div class="field">
+    <%= f.label :this_year_change %><br />
+    <%= f.text_field :this_year_change %>
+  </div>  
+  <div class="field">
+    <%= f.label :next_year_EPS %><br />
+    <%= f.text_field :next_year_EPS %>
+  </div>
+  <div class="field">
+    <%= f.label :next_year_change %><br />
+    <%= f.text_field :next_year_change %>
+  </div>  
+  <div class="field">
+    <%= f.label :PE %><br />
+    <%= f.text_field :PE %>
+  </div>
+  <div class="field">
+    <%= f.label :price_book_value %><br />
+    <%= f.text_field :price_book_value %>
+  </div>  
+  <div class="field">
+    <%= f.label :yield %><br />
+    <%= f.text_field :yield %>
+  </div>
+  <div class="field">
+    <%= f.label :target_price %><br />
+    <%= f.text_field :target_price %>
+  </div>
+  <div class="field">
+    <%= f.label :recommend %><br />
+    <%= f.text_field :recommend %>
+  </div>
+  <div class="field">
+    <%= f.label :last_published %><br />
+    <%= f.date_select :last_published %>
+  </div>
+  <div class="field">
+    <%= f.label :research %><br />
+    <%= f.check_box :research %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

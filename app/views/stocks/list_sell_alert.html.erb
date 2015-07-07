@@ -1,0 +1,46 @@
+<p></p>
+<div class="span-24">
+  <h3 align="center" class="quiet">
+  Sell Alert Stocks
+  </h3>
+</div>
+<div class="span-24">
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th>Target</th>        
+    <th>Price</th>
+    <th>Maximum</th>
+    <th>Minimum</th>
+    <th>Sell Target</th>
+    <th>Amount</th>
+    <th>Brokers</th>
+    <th></th>
+  </tr>
+
+<% @stocks.each do |stock| %>
+<% if stock.price.max_price >= stock.sell_target %>
+	
+  <tr>
+    <td><%= stock.name %></td>
+    <td><%= link_to_icon( 'Show', stock) %></td>
+    <td><%= number_with_precision(stock.consensus.average(:target_price), :precision => 2, :delimiter => ',') %></td>       
+    <td><%= number_to_currency(stock.price.price) %></td>
+    <td><%= number_to_currency(stock.price.max_price) %></td>
+    <td><%= number_to_currency(stock.price.min_price) %></td>
+    <td><%= number_to_currency(stock.sell_target) %></td>
+
+    <td><%= number_to_currency(stock.price.qty * stock.price.price) %></td>
+    <td><%= stock.consensus.count %></td>
+
+    <td><%= link_to_icon( 'Edit', edit_stock_path(stock)) %></td>
+  </tr>
+  
+<% end %>  
+<% end %>
+</table>
+</div>
+<br />
+
+<%= link_to 'New Stock', new_stock_path %>

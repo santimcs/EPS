@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @broker.name %>
+</p>
+
+<p>
+  <b>Full name:</b>
+  <%= @broker.full_name %>
+</p>
+
+<p>
+  <b>Broker url:</b>
+  <%= @broker.broker_url %>
+</p>
+
+
+<%= link_to 'Edit', edit_broker_path(@broker) %> |
+<%= link_to 'Back', brokers_path %>

@@ -80,9 +80,9 @@ caption {background:#eee;}
 
 /* forms.css */
 #header {
-	background-image: url(/images/header.jpg);
+/*	background-image: url(/images/header.jpg); */
 	background-repeat: no-repeat;
-	padding: 100px 0px 0px 45px;
+/*	padding: 100px 0px 100px 45px;  */
 }
 .clear {
 	clear: both;

@@ -1,39 +1,50 @@
+<p></p>
+<div class="span-24">
+  <h3 align="center" class="quiet">
+  Buy Alert Stocks
+  </h3>
+</div>
+<div class="span-24">
 <table>
   <tr>
     <th>Name</th>
+    <th></th>    
     <th>Price</th>
     <th>Maximum</th>
     <th>Minimum</th>
     <th>Buy Target</th>
-    <th>Quantity</th>
+
     <th>Amount</th>
-    <th>No. of EPS</th>
-    <th>Status</th>
+    <th>Broker</th>
+	<th>Target</th>
+    <th>Gain</th>
+    <th>Yield</th>    
     <th></th>
-    <th></th>
-     <th>Updated</th>
   </tr>
 
 <% @stocks.each do |stock| %>
-<% if stock.prices.first.min_price <= stock.buy_target %>
+<% if stock.price.min_price <= stock.buy_target %>
+	
   <tr>
     <td><%= stock.name %></td>
-    <td><%= number_to_currency(stock.prices.first.price) %></td>
-    <td><%= number_to_currency(stock.prices.first.max_price) %></td>
-    <td><%= number_to_currency(stock.prices.first.min_price) %></td>
+    <td><%= link_to_icon( 'Show', stock) %></td>    
+    <td><%= number_to_currency(stock.price.price) %></td>
+    <td><%= number_to_currency(stock.price.max_price) %></td>
+    <td><%= number_to_currency(stock.price.min_price) %></td>
     <td><%= number_to_currency(stock.buy_target) %></td>
-    <td><%= stock.prices.first.qty %></td>
-    <td><%= number_to_currency(stock.prices.first.qty * stock.prices.first.price) %></td>
-    <td><%= stock.earning_per_shares.count %></td>
-     <td><%= stock.status %></td>
-    <td><%= link_to_icon( 'Show', stock) %></td>
+
+    <td><%= number_to_currency(stock.price.qty * stock.price.price) %></td>
+    <td><%= stock.consensus.count %></td>
+    <td><%= number_to_currency(stock.consensus.average(:target_price)) %></td> 
+    <td><%= number_with_precision((stock.consensus.average(:target_price)-stock.price.price)/stock.price.price*100, :precision => 2, :delimiter => ',') %></td> 
+    <td><%= number_with_precision(stock.consensus.average(:yield)) %></td>       
     <td><%= link_to_icon( 'Edit', edit_stock_path(stock)) %></td>
-     <td><%= stock.updated_at.to_s(:short) %></td>
   </tr>
-<% end %>
+  
+<% end %>  
 <% end %>
 </table>
-
+</div>
 <br />
 
 <%= link_to 'New Stock', new_stock_path %>

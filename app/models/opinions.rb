@@ -1,0 +1,3 @@
+class Opinions < ActiveRecord::Base
+  # attr_accessible :title, :body
+end

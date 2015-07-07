@@ -1,0 +1,41 @@
+<h1>Listing ratios</h1>
+
+<table>
+  <tr>
+    <th>Stock</th>
+    <th>Stock name</th>
+    <th>Price</th>
+    <th>Earning per share</th>
+    <th>Ratio</th>
+    <th>Price book value</th>
+    <th>Yield</th>
+    <th>Dividend</th>
+    <th>Par value</th>
+    <th>Shares</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @ratios.each do |ratio| %>
+  <tr>
+    <td><%= ratio.stock_id %></td>
+    <td><%= ratio.stock_name %></td>
+    <td><%= ratio.price %></td>
+    <td><%= ratio.earning_per_share %></td>
+    <td><%= ratio.ratio %></td>
+    <td><%= ratio.price_book_value %></td>
+    <td><%= ratio.yield %></td>
+    <td><%= ratio.dividend %></td>
+    <td><%= ratio.par_value %></td>
+    <td><%= ratio.shares %></td>
+    <td><%= link_to 'Show', ratio %></td>
+    <td><%= link_to 'Edit', edit_ratio_path(ratio) %></td>
+    <td><%= link_to 'Destroy', ratio, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Ratio', new_ratio_path %>

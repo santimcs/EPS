@@ -1,0 +1,74 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Broker:</b>
+  <%= @consensu.broker.name %>
+</p>
+
+<p>
+  <b>Stock:</b>
+  <%= @consensu.stock.name %>
+</p>
+
+
+
+
+<p>
+  <b>This year eps:</b>
+  <%= @consensu.this_year_EPS %>
+</p>
+<p>
+  <b>This year %change:</b>
+  <%= @consensu.this_year_change %>
+</p>
+<p>
+  <b>Next year eps:</b>
+  <%= @consensu.next_year_EPS %>
+</p>
+
+<p>
+  <b>Next year %change:</b>
+  <%= @consensu.next_year_change %>
+</p>
+<p>
+  <b>Pe:</b>
+  <%= @consensu.PE %>
+</p>
+<p>
+  <b>P/BV:</b>
+  <%= @consensu.price_book_value %>
+</p>
+<p>
+  <b>Yield:</b>
+  <%= @consensu.yield %>
+</p>
+
+<p>
+  <b>Target price:</b>
+  <%= @consensu.target_price %>
+</p>
+
+<p>
+  <b>Recommend:</b>
+  <%= @consensu.recommend %>
+</p>
+
+<p>
+  <b>Last published:</b>
+  <%= @consensu.last_published %>
+</p>
+
+<p>
+  <b>Research:</b>
+  <%= @consensu.research %>
+</p>
+<p>
+  <b>This year profit:</b>
+  <%= number_to_currency(@consensu.this_year_profit) %>
+</p>
+<p>
+  <b>Next year profit:</b>
+  <%= number_to_currency(@consensu.next_year_profit) %>
+</p>
+<%= link_to 'Edit', edit_consensu_path(@consensu) %> |
+<%= link_to 'Back', consensus_path %>

@@ -1,0 +1,67 @@
+<h1>Listing consensus</h1>
+
+<%= search_form_for @search do |f| %>
+    <%= f.condition_fields do |c| %>
+        <div class="field">
+            <%= c.attribute_fields do |a| %>
+                <%= a.attribute_select associations: [:stock] %>
+            <% end %>
+            <%= c.predicate_select %>
+            <%= c.value_fields do |v| %>
+                <%= v.text_field :value %>
+            <% end %>
+        </div>
+    <% end %>
+    <div class="actions"><%= f.submit "Search" %></div>
+<% end %>
+
+<table>
+    <tr>
+        <th>No</th>
+        <th><%= sort_link(@search, :broker_name, "Broker") %></th>
+        <th></th>    
+        <th><%= sort_link(@search, :stock_name, "Stock") %></th>
+        <th>This year eps</th>
+        <th>%change</th>    
+        <th>Next year eps</th>
+        <th>%change</th>    
+        <th>Pe</th>
+        <th>P/BV</th>    
+        <th>Yield</th>
+        <th>Target price</th>
+        <th>Recommend</th>
+        <th><%= sort_link(@search, :last_published, "Published") %></th>
+        <th>Research</th>
+        <th>Profit</th>
+        <th></th>
+        <th></th>
+  </tr>
+<% seq = 0 %>
+<% @consensus.each do |consensu| %>
+<% seq = seq + 1 %>
+  <tr>
+     <td><%= seq %></td> 
+    <td><%= consensu.broker.name %></td>
+    <td><%= link_to_icon 'Edit', edit_consensu_path(consensu) %></td>    
+    <td><%= consensu.stock.name %></td>
+    <td><%= number_with_precision(consensu.this_year_EPS, :precision => 2) %></td>
+    <td><%= number_with_precision(consensu.this_year_change, :precision => 1, :delimiter => ',') %></td>    
+    <td><%= number_with_precision(consensu.next_year_EPS, :precision => 2) %></td>
+    <td><%= number_with_precision(consensu.next_year_change, :precision => 1, :delimiter => ',') %></td>    
+    <td><%= number_with_precision(consensu.PE, :precision => 2) %></td>
+    <td><%= number_with_precision(consensu.price_book_value, :precision => 1) %></td>    
+    <td><%= number_with_precision(consensu.yield, :precision => 2) %></td>
+    <td><%= number_with_precision(consensu.target_price, :precision => 2) %></td>
+    <td><%= consensu.recommend %></td>
+    <td><%= consensu.last_published.to_s(:short) %></td>
+    <td><%= consensu.research %></td>
+    <td><%= number_with_precision(consensu.this_year_profit, :precision => 0, :delimiter => ',') %></td>     
+    <td><%= link_to 'Show', consensu %></td>
+    <td><%= button_to 'Destroy', consensu, method: :delete, data: { confirm: 'Are you sure?' } %></td>  
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Consensu', new_consensu_path %>

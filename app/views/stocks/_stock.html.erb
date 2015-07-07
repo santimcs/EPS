@@ -1,16 +1,32 @@
 
   <tr>
     <td><%= stock.name %></td>
-    <td><%= number_with_precision(stock.prices.first.price, :precision => 2) %></td>
-    <td><%= number_with_precision(stock.prices.first.max_price, :precision => 2) %></td>
-    <td><%= number_with_precision(stock.prices.first.min_price, :precision => 2) %></td>
+    <td><%= link_to_icon('Show', stock) %></td>    
+    <td><%= stock.consensus.count %></td>    
+    <td><%= number_with_precision(stock.consensus.average(:target_price), :precision => 2) %></td>    
+	<% if Price.exists?(:stock_id => stock.id)%>
+    	<td><%= number_with_precision(stock.price.price, :precision => 2) %></td>
+    <% else %>
+    	<td><%= 0.00 %>
+    <% end %>	
+	<% if Price.exists?(:stock_id => stock.id)%>    
+    	<td><%= number_with_precision(stock.price.max_price, :precision => 2) %></td>
+    <% else %>
+    	<td><%= 0.00 %>
+    <% end %>  
+	<% if Price.exists?(:stock_id => stock.id)%>        
+    	<td><%= number_with_precision(stock.price.min_price, :precision => 2) %></td>
+    <% else %>
+    	<td><%= 0.00 %>
+    <% end %>     
     <td><%= number_with_precision(stock.buy_target, :precision => 2) %></td>
     <td><%= number_with_precision(stock.sell_target, :precision => 2) %></td>
-    
-    <td><%= number_with_delimiter(stock.prices.first.qty) %></td>
-    <td><%= number_with_precision(stock.prices.first.qty * stock.prices.first.price, :precision => 2, :delimiter => ',') %></td>
-    <td><%= stock.earning_per_shares.count %></td>
-    <td><%= link_to_icon('Show', stock) %></td>
+	<% if Price.exists?(:stock_id => stock.id)%>     
+    <td><%= number_with_precision(stock.price.qty * stock.price.price, :precision => 2, :delimiter => ',') %></td>
+    <% else %>
+    	<td><%= 0.00 %>
+    <% end %>     
+   
     <td><%= link_to_icon('Edit', edit_stock_path(stock)) %></td>
     <td><%=d stock.updated_at.to_s(:short) %></td>
     <td><%=d stock.in_port %></td>

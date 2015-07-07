@@ -1,0 +1,65 @@
+<%= form_for(@opinion) do |f| %>
+  <% if @opinion.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@opinion.errors.count, "error") %> prohibited this opinion from being saved:</h2>
+
+      <ul>
+      <% @opinion.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :broker_id %><br />
+    <%= f.number_field :broker_id %>
+  </div>
+  <div class="field">
+    <%= f.label :stock_id %><br />
+    <%= f.number_field :stock_id %>
+  </div>
+  <div class="field">
+    <%= f.label :this_year_profit %><br />
+    <%= f.text_field :this_year_profit %>
+  </div>
+  <div class="field">
+    <%= f.label :next_year_profit %><br />
+    <%= f.text_field :next_year_profit %>
+  </div>
+  <div class="field">
+    <%= f.label :this_year_EPS %><br />
+    <%= f.text_field :this_year_EPS %>
+  </div>
+  <div class="field">
+    <%= f.label :next_year_EPS %><br />
+    <%= f.text_field :next_year_EPS %>
+  </div>
+  <div class="field">
+    <%= f.label :PE %><br />
+    <%= f.text_field :PE %>
+  </div>
+  <div class="field">
+    <%= f.label :yield %><br />
+    <%= f.text_field :yield %>
+  </div>
+  <div class="field">
+    <%= f.label :target_price %><br />
+    <%= f.text_field :target_price %>
+  </div>
+  <div class="field">
+    <%= f.label :recommend %><br />
+    <%= f.text_field :recommend %>
+  </div>
+  <div class="field">
+    <%= f.label :last_published %><br />
+    <%= f.date_select :last_published %>
+  </div>
+  <div class="field">
+    <%= f.label :research %><br />
+    <%= f.check_box :research %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

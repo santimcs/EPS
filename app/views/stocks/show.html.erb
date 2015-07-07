@@ -1,74 +1,190 @@
 <p id="notice"><%= notice %></p>
+
 <div class="span-24">
   <h3 align="center" class="quiet">
   <%= @stock.name %>
-  </h1>
+  </h3>
 </div>
 
 <div class="span-24">
-<fieldset>
-<legend>Price</legend>
-<div class="span-5">
-  <b>Close:</b>
-  <div class="append-1">
-  <%= number_with_precision(@stock.prices.first.price, :precision => 2) %>
-  </div>
-</div>
-<div class="span-5">
-  <b>Maximum:</b>
-  <div class="append-1">
-  <%= number_with_precision(@stock.prices.first.max_price, :precision => 2) %>
-  </div>
-</div>
-<div class="span-5">
-  <b>Minimum:</b>
-  <div class="append-1">
-  <%= number_with_precision(@stock.prices.first.min_price, :precision => 2) %>
-  </div>
-</div>
-<div class="span-5">
-  <b>Qty:</b>
-  <div class="append-1">
-  <%= number_with_delimiter(@stock.prices.first.qty) %>
-  </div>
-</div>
-
-</fieldset>
+	<fieldset>
+		<legend>Price</legend>
+			<div class="span-5">
+  				<b>Close:</b>
+  				<div class="append-1">
+					<% if Price.exists?(:stock_id=>@stock.id) %>
+  						<%= number_with_precision(@stock.price.price, :precision => 2) %>
+					<% else %>
+						<%= 0.00 %>
+					<% end %>
+  				</div>
+			</div>
+			<div class="span-5">
+  				<b>Maximum:</b>
+  					<div class="append-1">
+					<% if Price.exists?(:stock_id=>@stock.id) %>
+  						<%= number_with_precision(@stock.price.max_price, :precision => 2) %>
+					<% else %>
+						<%= 0.00 %>
+					<% end %>  						 					
+  					</div>
+			</div>
+			<div class="span-5">
+  				<b>Minimum:</b>
+  				<div class="append-1">
+					<% if Price.exists?(:stock_id=>@stock.id) %>					
+  					<%= number_with_precision(@stock.price.min_price, :precision => 2) %>
+					<% else %>
+						<%= 0.00 %>
+					<% end %>   										
+  				</div>
+			</div>
+			<div class="span-5">
+  				<b>Qty:</b>
+  				<div class="append-1">
+					<% if Price.exists?(:stock_id=>@stock.id) %>
+  					<%= number_with_delimiter(@stock.price.qty) %>
+					<% else %>
+						<%= 0 %>
+					<% end %>   									
+  				</div>
+			</div>
+	</fieldset>
 </div>
 
 <div class="span-24">
-<fieldset>
-<legend>P/E</legend>
-<div class="span-5">
-  <b>Average EPS = </b>
-  <% avg_eps = ((@stock.earning_per_shares.sum(:quarterly_eps, :conditions => ["year = ? or (year < ? and quarter > ?)",@stock.earning_per_shares.first.year,@stock.earning_per_shares.first.year,@stock.earning_per_shares.first.quarter]))/(@stock.earning_per_shares.count(:conditions => ["year = ? or (year < ? and quarter > ?)",@stock.earning_per_shares.first.year,@stock.earning_per_shares.first.year,@stock.earning_per_shares.first.quarter]))*4).round(2)%>
-  <%= number_with_precision(avg_eps, :precision => 2) %>
+	<fieldset>
+		<legend>Price/Earning Ratio</legend>
+		<div class="span-5">
+  			<b>Present EPS = </b>
+
+  			<% avg_eps = ((@stock.earning_per_shares.sum(:quarterly_eps,
+   			:conditions => ["year = ? or ((year - ?) = -1 and quarter > ?)",@stock.earning_per_shares.first.year,@stock.earning_per_shares.first.year,@stock.earning_per_shares.first.quarter]))/
+   			(@stock.earning_per_shares.count(:conditions => ["year = ? or ((year - ?) = -1 and quarter > ?)",@stock.earning_per_shares.first.year,@stock.earning_per_shares.first.year,@stock.earning_per_shares.first.quarter]))*4).round(4)%>
+  			<%= number_with_precision(avg_eps, :precision => 4) %>
+ 			
+		</div>
+		<div class="span-5">
+  			<b>P/E * 10 = </b>
+  			<%= number_with_precision(avg_eps*10, :precision => 2, :delimiter => ',') %>
+		</div>
+		<div class="span-5">
+  			<b>P/E * 15 = </b>
+  			<%= number_with_precision(avg_eps*15, :precision => 2, :delimiter => ',') %>
+		</div>
+		<div class="span-5 last">
+  			<b>SAA Price = </b>
+  			<% target_price = @stock.consensus.average(:target_price) %>
+  			<%= number_with_precision(target_price, :precision => 2, :delimiter => ',') %>
+		</div>
+		<div class="span-5">
+  			<b>Yearly Profit = </b>
+  			<% profit = ((@stock.earning_per_shares.sum(:quarterly_profit,
+   			:conditions => ["year = ? or ((year - ?) = -1 and quarter >            ?)",@stock.earning_per_shares.first.year,@stock.earning_per_shares.first.year,@stock.earning_per_shares.first.quarter]))/
+   			(@stock.earning_per_shares.count(:conditions => ["year = ? or ((year - ?) = -1 and quarter > ?)",@stock.earning_per_shares.first.year,@stock.earning_per_shares.first.year,@stock.earning_per_shares.first.quarter]))*4).round(2)%>
+            <% profit_in_million = profit/1000 %>
+  			<%= number_with_precision(profit_in_million, :precision => 0, :delimiter => ',') %>
+		</div>
+		<div class="span-5">
+  			<b>Forecast Profit = </b>
+  			<% forecast_profit = @stock.consensus.average(:this_year_profit) %>
+  			<%= number_with_precision(forecast_profit, :precision => 0, :delimiter => ',') %>
+		</div>		
+		<div class="span-5">
+  			<b>Gain/Loss % = </b>
+  			<% if Consensus.exists?(:stock_id => @stock.id)%>
+  				<% gain = (forecast_profit-profit_in_million)/profit_in_million*100 %>
+  				<%= number_with_precision(gain, :precision => 0, :delimiter => ',') %>
+  			<% else %>
+  				<%= 0 %>
+  			<% end %>
+		</div>	
+		<div class="span-5 last">
+  			<b>Yield = </b>
+  			<% dividend = @stock.consensus.average(:yield, :conditions => ["yield > 0"]) %>
+  			<%= number_with_precision(dividend, :precision => 2, :delimiter => ',') %>
+		</div>				
+	</fieldset>
 </div>
 
-<div class="span-5">
-  <b>P/E * 10 = </b>
-  <%= number_with_precision(avg_eps*10, :precision => 2, :delimiter => ',') %>
-</div>
-<div class="span-5">
-  <b>P/E * 15 = </b>
-  <%= number_with_precision(avg_eps*15, :precision => 2, :delimiter => ',') %>
-</div>
-<div class="span-5 last">
-  <b>P/E * 20 = </b>
-  <%= number_with_precision(avg_eps*20, :precision => 2, :delimiter => ',') %>
+<div class="span-24">
+	<fieldset>
+		<legend>Future P/E</legend>
+		<div class="span-5">
+  			<b>Present P/E = </b>
+  			<% if Price.exists?(:stock_id => @stock.id)%> 
+				<%= number_with_precision(@stock.price.price/avg_eps, :precision => 2) %>
+    		<% else %>
+    			<%= 0.00 %>
+    		<% end %>			
+		</div>
+
+		<div class="span-5">
+  			<b>Shares = </b>
+  			<%= number_with_precision(@stock.shares/1000000, :precision => 0, :delimiter => ',') %>
+		</div>
+
+		<div class="span-5">
+  			<b>Future EPS = </b>
+  			<% if Consensus.exists?(:stock_id => @stock.id)%>
+  				<% future_eps = (forecast_profit*1000000)/@stock.shares %>
+  				<%= number_with_precision(future_eps, :precision => 2, :delimiter => ',') %>
+  			<% else %>
+  				<% future_eps = 0.01 %>
+  				<%= 0 %>
+  			<% end %>  			
+		</div>
+
+		<div class="span-5">
+  			<b>Future P/E = </b>
+  			<% if Price.exists?(:stock_id => @stock.id)%>   			
+				<%= number_with_precision(@stock.price.price.div(future_eps), :precision => 2) %>
+    		<% else %>
+    			<%= 0.00 %>
+    		<% end %>			
+		</div>
+		<div class="span-5">
+  			<b>Calculated Price = </b>
+  			<% if Price.exists?(:stock_id => @stock.id)%>   			  			
+  				<% future_price = future_eps * @stock.price.price.div(avg_eps) %>
+    		<% else %>
+    			<%= 0.00 %>
+    		<% end %>			
+  			
+  			<%= number_with_precision(future_price, :precision => 2, :delimiter => ',') %>
+		</div>
+	</fieldset>
 </div>
 
-</fieldset>
+<div class="span-24">
+<table class="zebra">
+	<tbody>
+	<tr>
+		<th>EPS</th>
+		<th>Shares</th>
+		<th>Profit</th>
+		<th>Forecast</th>
+		<th>Gain</th>
+		<th>Yield</th>
+		<th>Target</th>		
+	</tr>
+	<tr>	
+		<td><%=h avg_eps %></td>
+		<td><%=h number_with_precision(@stock.shares/1000000, :precision => 0, :delimiter => ',') %></td>
+		<td><%= number_with_precision(profit_in_million, :precision => 0, :delimiter => ',') %></td>
+		<td><%= number_with_precision(forecast_profit, :precision => 0, :delimiter => ',') %></dh>
+		<td><%= number_with_precision(gain, :precision => 0, :delimiter => ',') %></td>
+		<td><%= number_with_precision(dividend, :precision => 2, :delimiter => ',') %></td>
+		<td><%= number_with_precision(target_price, :precision => 2, :delimiter => ',') %></td>		
+	</tr>
+	</tbody>	
+</table>
 </div>
-
-<div class="span-24 prepend-10">
-  <b>Average P/E = </b>
- <%= number_with_precision(@stock.prices.first.price.div(avg_eps), :precision => 2) %>
-</div>
+	
 <div class="span-24">
 <fieldset>
 <legend>Quarterly Profit & Earning per Share</legend>
-<table border='0'>
+<table class="zebra">
 
 	<tr>
 		<th></th>
@@ -80,30 +196,30 @@
 	</tr>
 	<tr>
 		<th>Year</th>
-		<th>Quarter</th>
-		<th>Quarterly</th>
-		<th> YoY</th>
-		<th>Accumulated</th>
-		<th>YoY</th>
-		<th>Quarterly</th>
-		<th>YoY</th>
-		<th>Accumulated</th>
-		<th>YoY</th>
+		<th align="right">Qtr</th>
+		<th align="right">---Qtr---</th>
+		<th align="right">---YoY---</th>
+		<th align="right">---Acc---</th>
+		<th align="right">---YoY---</th>
+		<th align="right">---Qtr---</th>
+		<th align="right">---YoY---</th>
+		<th align="right">---Acc---</th>
+		<th align="right">---YoY---</th>
 	</tr>
 <% for earning_per_share in @stock.earning_per_shares %>
 	<tr>
 		<td><%=h earning_per_share.year %></td>
 		<td align="center"><%=h earning_per_share.quarter%></td>
 
-		<td><%=h earning_per_share.quarterly_eps %></td>
-		<td><%=h earning_per_share.yoy_quarterly_eps %></td>
-		<td><%=h earning_per_share.accumulated_eps %></td>
-		<td><%=h earning_per_share.yoy_accumulated_eps %></td>
+		<td align="right"><%=h number_with_precision(earning_per_share.quarterly_eps, :precision => 4) %></td>
+		<td align="right"><%=h number_with_precision(earning_per_share.yoy_quarterly_eps, :precision => 4) %></td>
+		<td align="right"><%=h number_with_precision(earning_per_share.accumulated_eps, :precision => 4) %></td>
+		<td align="right"><%=h number_with_precision(earning_per_share.yoy_accumulated_eps, :precision => 4) %></td>
 
-		<td><%=h number_with_precision(earning_per_share.quarterly_profit_in_million, :precision => 2, :delimiter => ',') %></td>
-		<td><%=h number_with_precision(earning_per_share.yoy_quarterly_profit_in_million, :precision => 2, :delimiter => ',') %></td>
-		<td><%=h number_with_precision(earning_per_share.accumulated_profit_in_million, :precision => 2, :delimiter => ',') %></td>
-		<td><%=h number_with_precision(earning_per_share.yoy_accumulated_profit_in_million, :precision => 2, :delimiter => ',') %></td>
+		<td align="right"><%=h number_with_precision(earning_per_share.quarterly_profit_in_million, :precision => 0, :delimiter => ',') %></td>
+		<td align="right"><%=h number_with_precision(earning_per_share.yoy_quarterly_profit_in_million, :precision => 0, :delimiter => ',') %></td>
+		<td align="right"><%=h number_with_precision(earning_per_share.accumulated_profit_in_million, :precision => 0, :delimiter => ',') %></td>
+		<td align="right"><%=h number_with_precision(earning_per_share.yoy_accumulated_profit_in_million, :precision => 0 , :delimiter => ',') %></td>
 
 	</tr>
 <% end %>

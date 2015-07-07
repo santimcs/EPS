@@ -1,0 +1,65 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Broker:</b>
+  <%= @opinion.broker_id %>
+</p>
+
+<p>
+  <b>Stock:</b>
+  <%= @opinion.stock_id %>
+</p>
+
+<p>
+  <b>This year profit:</b>
+  <%= @opinion.this_year_profit %>
+</p>
+
+<p>
+  <b>Next year profit:</b>
+  <%= @opinion.next_year_profit %>
+</p>
+
+<p>
+  <b>This year eps:</b>
+  <%= @opinion.this_year_EPS %>
+</p>
+
+<p>
+  <b>Next year eps:</b>
+  <%= @opinion.next_year_EPS %>
+</p>
+
+<p>
+  <b>Pe:</b>
+  <%= @opinion.PE %>
+</p>
+
+<p>
+  <b>Yield:</b>
+  <%= @opinion.yield %>
+</p>
+
+<p>
+  <b>Target price:</b>
+  <%= @opinion.target_price %>
+</p>
+
+<p>
+  <b>Recommend:</b>
+  <%= @opinion.recommend %>
+</p>
+
+<p>
+  <b>Last published:</b>
+  <%= @opinion.last_published %>
+</p>
+
+<p>
+  <b>Research:</b>
+  <%= @opinion.research %>
+</p>
+
+
+<%= link_to 'Edit', edit_opinion_path(@opinion) %> |
+<%= link_to 'Back', opinions_path %>

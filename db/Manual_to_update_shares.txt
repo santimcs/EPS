@@ -1,0 +1,8 @@
+To update number of shares in EPS database
+1) SELECT * FROM per p;
+2) Export result set as CSV to db/per.csv
+3) Delete header row from dp/per.csv	
+4) cd\ruby\eps
+5) rails runner db/per.rb 
+6) rails runner db/update_shares.rb 
+7) rails runner db/update_profit.rb 

@@ -1,3 +1,4 @@
+
 <%= form_for(@earning_per_share) do |f| %>
   <% if @earning_per_share.errors.any? %>
     <div id="error_explanation">
@@ -10,7 +11,10 @@
       </ul>
     </div>
   <% end %>
-
+  
+<div class="span-24">
+	<fieldset>
+		<legend>Earning Per Share</legend>
   <div class="field">
     <%= f.label :name %><br />
         <%= f.select :stock_id, Stock.find(:all , :order => "name").collect {|s|
@@ -19,13 +23,13 @@
   </div>
   <div class="field">
     <%= f.label :year %><br />
-    <% years = { '2010' => '2010', '2009' => '2009', '2011' => '2011' } %>
+    <% years = {'2015' => '2015' ,'2014' => '2014', '2013' => '2013' } %>
     <% list = years %>
     <%= f.select :year, list %>
   </div>
   <div class="field">
     <%= f.label :quarter %><br />
-    <% quarters = { '4' => '4', '3' => '3', '2' => '2', '1' => '1' } %>
+    <% quarters = { '1' => '1', '2' => '2','3' => '3','4' => '4'} %>
     <% list = quarters %>
     <%= f.select :quarter, list %>
     <!-- <%= f.text_field :quarter %> -->
@@ -65,4 +69,7 @@
   <div class="actions">
     <%= f.submit %>
   </div>
+
+</fieldset>
+</div>
 <% end %>

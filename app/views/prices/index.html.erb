@@ -1,5 +1,6 @@
 <h1>Listing prices</h1>
 
+<%= paginate @prices %>
 <table>
   <tr>
     <th>Name</th>
@@ -8,7 +9,7 @@
     <th>Max price</th>
     <th>Min price</th>
     <th>Qty</th>
-    <th>Stock</th>
+    <th>Volume</th>    
     <th></th>
     <th></th>
     <th></th>
@@ -18,11 +19,11 @@
   <tr>
     <td><%= price.name %></td>
     <td><%= price.date %></td>
-    <td><%= price.price %></td>
-    <td><%= price.max_price %></td>
-    <td><%= price.min_price %></td>
-    <td><%= price.qty %></td>
-    <td><%= price.stock_id %></td>
+    <td><%= number_to_currency(price.price) %></td>
+    <td><%= number_to_currency(price.max_price) %></td>
+    <td><%= number_to_currency(price.min_price) %></td>
+    <td><%= number_with_delimiter(price.qty) %></td>
+    <td><%= number_to_currency(price.price * price.qty) %></td>    
     <td><%= link_to 'Show', price %></td>
     <td><%= link_to 'Edit', edit_price_path(price) %></td>
     <td><%= link_to 'Destroy', price, :confirm => 'Are you sure?', :method => :delete %></td>

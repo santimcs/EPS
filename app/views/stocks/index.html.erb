@@ -1,30 +1,28 @@
-<% form_tag stocks_path, :method => :get do %>
-	<h3 align="center">Stocks</h3>
-	<p align="center">
-    	<%= text_field_tag :search, params[:search] %>
-		<SELECT NAME="status">
-			<OPTION VALUE="A" SELECTED>All</OPTION>
-			<OPTION VALUE="I" >In Port</OPTION>
-			<OPTION VALUE="O" >On Watch</OPTION>
-			<OPTION VALUE="B" >Buy Alert</OPTION>
-			<OPTION VALUE="S" >Sell Alert</OPTION>			
-  		</SELECT>
-		<%= submit_tag "Query", :name => nil %>
-	</p>
+
+
+<%= search_form_for @search do |f| %>
+  <div class="field">
+    <%= f.label :name_cont, "Name contains" %>
+    <%= f.text_field :name_cont %>
+  </div>
+  <div class="actions"><%= f.submit "Search" %></div>
 <% end %>
-<h4><%= debug params[:status] %></h4>
+
+
 <table>
   <tr>
     <th>Name</th>
+    <th></th>   
+    <th>Brokers</th>   
+    <th>Target</th>      
     <th>Price</th>
     <th>Maximum</th>
     <th>Minimum</th>
     <th>Buy Target</th>
     <th>Sales Target</th>    
-    <th>Quantity</th>
+
     <th>Amount</th>
-    <th>No. of EPS</th>
-    <th></th>
+    
     <th></th>
     <th>Updated</th>
     <th>In Port</th>
@@ -35,9 +33,12 @@
 
 </table>
 <br />
-<div class="span-12">
+<div class="span-8">
 	<%= link_to 'New Stock', new_stock_path %>
 </div>
-<div class="span-12 last">
+<div class="span-8">
+	<%= link_to 'New EPS', new_earning_per_share_path %>
+</div>
+<div class="span-8 last">
 	<%= link_to 'Back', stocks_path %>
 </div>

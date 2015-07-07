@@ -27,12 +27,12 @@
 
 <p>
   <b>Qty:</b>
-  <%= @price.qty %>
+  <%= number_with_delimiter(@price.qty) %>
 </p>
 
 <p>
-  <b>Stock:</b>
-  <%= @price.stock_id %>
+  <b>Volume:</b>
+  <%= number_to_currency(@price.price * @price.qty) %>
 </p>
 
 

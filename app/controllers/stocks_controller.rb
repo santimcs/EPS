@@ -2,8 +2,8 @@ class StocksController < ApplicationController
   # GET /stocks
   # GET /stocks.xml
   def index
-    @stocks = Stock.search(params)
-
+	@search = Stock.search(params[:q])
+	@stocks = @search.result
   end
 
   def list_in_port
@@ -27,6 +27,14 @@ class StocksController < ApplicationController
   def list_buy_alert
     @stocks = Stock.find_buy_alert
 
+    respond_to do |format|
+      format.html # index.html.erb
+      format.xml  { render :xml => @stocks }
+    end
+  end
+
+  def list_sell_alert
+    @stocks = Stock.find_sell_alert
 
     respond_to do |format|
       format.html # index.html.erb

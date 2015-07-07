@@ -1,7 +1,9 @@
 class Stock < ActiveRecord::Base
   has_many :earning_per_shares, :order => 'name ASC, year DESC, quarter DESC', :dependent => :destroy
-  has_many :prices, :order => 'date DESC'
-
+  has_one :price
+  has_many :consensus
+	belongs_to :ratio
+  	
   scope :contain_char, lambda { |char| where('"stocks"."name" LIKE ?', "%#{char}%")}
   scope :is_in_port, where('in_port = ?', true)
   scope :is_on_watch, where('on_watch = ?', true)
@@ -20,23 +22,7 @@ class Stock < ActiveRecord::Base
 
   end
 
-	def self.search(params)
-    search = params[:search]
-    status = params[:status]
 
-    if "#{status}" == 'A'
-      self.contain_char(search)
-    elsif "#{status}" == 'I'
-		  self.contain_char(search).is_in_port
-    elsif "#{status}" == 'O'
-      self.contain_char(search).is_on_watch
-    elsif "#{status}" == 'S'
-      self.contain_char(search).sell_alert      
-    else
-      self.contain_char(search).buy_alert
-    end
-
-	end
 
   def self.find_on_watch
     options = {
@@ -54,5 +40,20 @@ class Stock < ActiveRecord::Base
     find(:all, options)
   end
 
+  def self.find_buy_alert
+    options = {
+      :conditions => [ "on_watch = ? AND in_port = ?", true, false ],
+      :order => 'name ASC'
+    }
+    find(:all, options)
+  end
 
+  def self.find_sell_alert
+    options = {
+      :conditions => [ "in_port = ?", true ],
+      :order => 'name ASC'
+    }
+    find(:all, options)
+  end
+  
 end

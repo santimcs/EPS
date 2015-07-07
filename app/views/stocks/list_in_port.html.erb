@@ -1,32 +1,42 @@
+<p></p>
+<div class="span-24">
+  <h3 align="center" class="quiet">
+  In Port Stocks
+  </h3>
+</div>
+<div class="span-24">
 <table>
   <tr>
     <th>Name</th>
-    <th>Price</th>
+    <th></th>   
+    <th>Price</th>     
     <th>Maximum</th>
     <th>Minimum</th>
     <th>Quantity</th>
     <th>Amount</th>
-    <th>No. of EPS</th>
-    <th></th>
-    <th></th>
+    <th>Brokers</th>
+    <th>Target Price</th>
+    <th>Yield</th>
     <th></th>
   </tr>
 
 <% @stocks.each do |stock| %>
   <tr>
     <td><%= stock.name %></td>
-    <td><%= number_to_currency(stock.prices.first.price) %></td>
-    <td><%= number_to_currency(stock.prices.first.max_price) %></td>
-    <td><%= number_to_currency(stock.prices.first.min_price) %></td>
-    <td><%= stock.prices.first.qty %></td>
-    <td><%= number_to_currency(stock.prices.first.qty * stock.prices.first.price) %></td>
-    <td><%= stock.earning_per_shares.count %></td>
-    <td><%= link_to_icon( 'Show', stock) %></td>
+    <td><%= link_to_icon( 'Show', stock) %></td>    
+    <td><%= number_to_currency(stock.price.price) %></td>
+    <td><%= number_to_currency(stock.price.max_price) %></td>
+    <td><%= number_to_currency(stock.price.min_price) %></td>
+    <td><%= number_with_precision(stock.price.qty, :precision => 0, :delimiter => ',') %></td>
+    <td><%= number_to_currency(stock.price.qty * stock.price.price) %></td>
+    <td><%= stock.consensus.count %></td>
+    <td><%= number_to_currency(stock.consensus.average(:target_price)) %></td>    
+    <td><%= number_with_precision(stock.consensus.average(:yield), :precision => 2, :delimiter => ',') %></td>
     <td><%= link_to_icon( 'Edit', edit_stock_path(stock)) %></td>
   </tr>
 <% end %>
 </table>
-
+</div>
 <br />
 
 <%= link_to 'New Stock', new_stock_path %>
