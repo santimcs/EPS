@@ -42,7 +42,7 @@ class Stock < ActiveRecord::Base
 
   def self.find_buy_alert
     options = {
-      :conditions => [ "on_watch = ? AND in_port = ?", true, false ],
+      :conditions => [ "on_watch = ?", true ],
       :order => 'name ASC'
     }
     find(:all, options)
